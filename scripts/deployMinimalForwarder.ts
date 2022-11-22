@@ -8,7 +8,7 @@ async function main() {
 
     console.log("\n")
 
-    const minimalForwarder: MinimalForwarder = await ethers.getContractFactory("MinimalForwarder").then(f => f.deploy());
+    const minimalForwarder: MinimalForwarder = await ethers.getContractFactory("MinimalForwarder").then(f => f.deploy("MinimalForwarder", "0.0.1"));
     console.log("Deploying SignatureDrop \ntransaction: ", minimalForwarder.deployTransaction.hash, "\naddress: ", minimalForwarder.address);
     await minimalForwarder.deployTransaction.wait();
 

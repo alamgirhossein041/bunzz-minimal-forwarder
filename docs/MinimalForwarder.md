@@ -26,23 +26,6 @@ function connectToOtherContracts(address[] contracts) external nonpayable
 |---|---|---|
 | contracts | address[] | undefined |
 
-### contractVersion
-
-```solidity
-function contractVersion() external pure returns (string)
-```
-
-
-
-*Get contract version*
-
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | string | (string memory) Version string |
-
 ### execute
 
 ```solidity

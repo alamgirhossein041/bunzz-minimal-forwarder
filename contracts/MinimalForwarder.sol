@@ -20,7 +20,9 @@ contract MinimalForwarder is IBunzz, IMinimalForwarder, EIP712, Ownable {
 
     address public minimalForwarderContract;
 
-    constructor() EIP712("MinimalForwarder", contractVersion()) {}
+    constructor(string memory name_, string memory version_)
+        EIP712(name_, version_)
+    {}
 
     function getNonce(address from_) public view returns (uint256) {
         return _nonces[from_];
@@ -76,14 +78,6 @@ contract MinimalForwarder is IBunzz, IMinimalForwarder, EIP712, Ownable {
         }
 
         return (success, returndata);
-    }
-
-    /**
-     * @dev Get contract version
-     * @return (string memory) Version string
-     */
-    function contractVersion() public pure returns (string memory) {
-        return "1.0.0";
     }
 
     function connectToOtherContracts(address[] calldata contracts)
